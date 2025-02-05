@@ -1,0 +1,19 @@
+<!-- auth/templates/auth/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+</head>
+<body>
+    <h1>Bienvenue sur la page d'accueil</h1>
+
+    {% if utilisateur %}
+        <p>Bonjour, <strong>{{ utilisateur.nom }}</strong> !</p>
+        <p>Vous êtes connecté.</p>
+        <a href="{% url 'logout' %}">Déconnexion</a>
+    {% else %}
+        <p>Vous n'êtes pas connecté.</p>
+        <a href="{% url 'login' %}">Connexion</a> | <a href="{% url 'signup' %}">Inscription</a>
+    {% endif %}
+</body>
+</html>
