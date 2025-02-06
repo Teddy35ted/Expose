@@ -23,5 +23,8 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('signup/', views.signin, name='signin'),
     path('logout/', views.user_logout, name='logout'),
+    path('password_reset_request/', views.password_reset_request, name='password_reset_request'),
+    path('password_reset_confirm/<int:user_id>/', views.password_reset_confirm, name='password_reset_confirm'),
+    path('password_change/', views.password_change, name='password_change'),
     path('admin/', admin.site.urls),
 ]
